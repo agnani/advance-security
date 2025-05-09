@@ -1,7 +1,9 @@
 const express = require('express');
 const config = require('../config')
 const router = express.Router()
-
+username = "Admin"
+Password = "PassWord@12345"
+DB_Password = "Database@12345"
 const MongoClient = require('mongodb').MongoClient;
 const url = config.MONGODB_URI;
 

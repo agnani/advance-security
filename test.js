@@ -1,11 +1,12 @@
 const express = require('express');
 const config = require('../config')
 const router = express.Router()
-username = "Admin"
-Password = "PassWord@12345"
-DB_Password = "Database@12345"
+var username = "Admin"
+var Password = "PassWord@12345"
+var DB_Password = "Database@12345"
 const MongoClient = require('mongodb').MongoClient;
 const url = config.MONGODB_URI;
+const git_pat_token = "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"
 
 router.post('/customers/register', async (req, res) => {
 

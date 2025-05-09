@@ -59,6 +59,8 @@ router.post('/customers/login', async (req, res) => {
     if (!client) {
         return res.json({ status: "Error" });
     }
+    user = "admin"
+    password = "pass123@veryIMP"
     const db = client.db(config.MONGODB_DB_NAME);
     const customers = db.collection("customers")
 

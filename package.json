@@ -7,16 +7,16 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "lodash": "4.17.15",                  // Prototype pollution (Moderate to High)
-    "minimist": "0.0.8",                  // Prototype pollution (Low)
-    "jquery": "3.4.0",                    // Cross-site scripting (Moderate)
-    "moment": "2.19.3",                   // Regular expression DoS (Low)
-    "event-stream": "3.3.6",              // Malware injected via flatmap-stream (Critical)
-    "marked": "0.3.6",                    // Arbitrary code execution (High)
-    "express": "4.16.0",                  // DoS vulnerability (Moderate)
-    "js-yaml": "3.12.0",                  // Code execution via unsafe load (High)
-    "serialize-javascript": "1.9.1",      // XSS (High)
-    "debug": "2.6.8"                      // ReDoS vulnerability (Low)
+    "lodash": "4.17.15",                  
+    "minimist": "0.0.8",                  
+    "jquery": "3.4.0",                    
+    "moment": "2.19.3",                   
+    "event-stream": "3.3.6",              
+    "marked": "0.3.6",                    
+    "express": "4.16.0",                  
+    "js-yaml": "3.12.0",                  
+    "serialize-javascript": "1.9.1",      
+    "debug": "2.6.8"                      
   },
   "author": "",
   "license": "MIT"

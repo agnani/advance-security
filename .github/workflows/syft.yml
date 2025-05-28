@@ -27,3 +27,12 @@ jobs:
         with:
           name: syft-sbom
           path: sbom.json
+
+      - name: Generate SBOM in SARIF format
+        run: syft dir:. -o sarif > sbom.sarif
+
+      - name: Upload SBOM to GitHub Code Scanning
+        uses: github/codeql-action/upload-sarif@v2
+        with:
+          sarif_file: sbom.sarif
+

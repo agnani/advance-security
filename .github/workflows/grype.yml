@@ -24,7 +24,7 @@ jobs:
           curl -sSfL https://raw.githubusercontent.com/anchore/grype/main/install.sh | sh -s -- -b /usr/local/bin
 
       - name: Scan project directory for vulnerabilities
-        run: grype dir:. -o sarif > grype-report.sarif
+        run: grype dir:$GITHUB_WORKSPACE -o sarif > grype-report.sarif
 
       - name: Upload SARIF to GitHub Security tab
         uses: github/codeql-action/upload-sarif@v2

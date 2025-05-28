@@ -42,7 +42,7 @@ jobs:
           sarif_file: snyk-results.sarif
 
       - name: Upload raw Snyk JSON as artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: snyk-sca-report
           path: snyk-results.json

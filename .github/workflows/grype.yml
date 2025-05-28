@@ -23,6 +23,9 @@ jobs:
         run: |
           curl -sSfL https://raw.githubusercontent.com/anchore/grype/main/install.sh | sh -s -- -b /usr/local/bin
 
+      - name: Install dependencies
+        run: npm install
+
       - name: Scan project directory for vulnerabilities
         run: grype dir:$GITHUB_WORKSPACE -o sarif > grype-report.sarif
 

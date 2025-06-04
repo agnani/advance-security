@@ -16,7 +16,7 @@ jobs:
       - name: Run ZAP Full Scan
         uses: zaproxy/action-full-scan@v0.12.0
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GIT_TOKEN }}
           target: 'https://juice-shop.herokuapp.com'
           cmd_options: '-a -z "-config connection.ssl_cert_validation=false"'
           allow_issue_writing: false

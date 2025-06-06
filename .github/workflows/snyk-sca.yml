@@ -35,7 +35,7 @@ jobs:
 
       - name: Run Snyk test and generate reports
         run: |
-          npx snyk test --json-file-output=snyk-results.html || true
+          npx snyk test --html-file-output=snyk-results.html || true
           npx snyk test --sarif-file-output=snyk-results.sarif || true
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}

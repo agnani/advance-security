@@ -22,17 +22,17 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run Snyk to test for vulnerabilities
-        uses: snyk/actions/node@master
-        with:
-          command: test
-        env:
-          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+      # - name: Run Snyk to test for vulnerabilities
+      #   uses: snyk/actions/node@master
+      #   with:
+      #     command: test
+      #   env:
+      #     SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
 
-      - name: Export Snyk SCA results to SARIF
+      - name: Run Snyk test and generate reports
         run: |
-          snyk test --json-file-output=snyk-results.html
-          snyk test --sarif-file-output=snyk-results.sarif
+          npx snyk test --json-file-output=snyk-results.html
+          npx snyk test --sarif-file-output=snyk-results.sarif
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
 

@@ -31,7 +31,7 @@ jobs:
 
       - name: Export Snyk SCA results to SARIF
         run: |
-          snyk test --json-file-output=snyk-results.json
+          snyk test --json-file-output=snyk-results.html
           snyk test --sarif-file-output=snyk-results.sarif
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
@@ -41,8 +41,8 @@ jobs:
         with:
           sarif_file: snyk-results.sarif
 
-      - name: Upload raw Snyk JSON as artifact
+      - name: Upload raw Snyk HTML as artifact
         uses: actions/upload-artifact@v4
         with:
           name: snyk-sca-report
-          path: snyk-results.json
+          path: snyk-results.html

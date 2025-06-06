@@ -35,11 +35,15 @@ jobs:
 
       - name: Run Snyk test and generate reports
         run: |
-          npx snyk test --html-file-output=snyk-results.html || true
+          npx snyk test --json-file-output=snyk-results.json || true
           npx snyk test --sarif-file-output=snyk-results.sarif || true
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
 
+      - name: Convert Snyk JSON to HTML
+        run: |
+          npx snyk-to-html -i snyk-results.json -o snyk-results.html
+    
       - name: Upload SARIF report to GitHub
         uses: github/codeql-action/upload-sarif@v3
         with:

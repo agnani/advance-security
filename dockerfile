@@ -1,4 +1,4 @@
-FROM  python:3.8-alpine
+FROM  python:3.13.2-alpine
 
 RUN apk -U upgrade
 RUN apk update && apk add --upgrade libcrypto3
